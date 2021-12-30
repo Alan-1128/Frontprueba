@@ -1,0 +1,9 @@
+
+
+<div class="contenedor navbar">
+        <a routerLink="inicio" class="pointer">Inicio</a>
+        <a routerLink="logging" *ngIf="!usu.isAuthenticated()" class="pointer">Iniciar Sección</a>
+        <a (click)="logout()" *ngIf="usu.isAuthenticated()" class="pointer">Salir</a>
+        <a routerLink="agregar" *ngIf="usu.hasRole('ROLE_ADMIN')" class="pointer">Añadir nota</a>
+</div>
+

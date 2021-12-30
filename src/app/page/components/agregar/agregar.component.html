@@ -1,0 +1,40 @@
+<main id="blog">
+    <div class="contenedor">
+        <div class="contenido">
+
+            <div class="post">
+                <h1 class="titulo">Agregar Nota</h1>
+            </div>
+            <hr><br>
+
+            <p class="parrafo">
+                Hola esta sección es para la publicación de notas, ten en cuenta que tienes que rellenar todos los campos es obligatorio.
+            </p>
+            <br><br>
+            <form class="form" autocomplete="off" [formGroup]="miFormulario" (ngSubmit)="guardar()">
+
+                <p class="parrafo">* Titulo</p>
+                <span class="text-danger" 
+                      *ngIf="validacion('titulo')">Debe de ser mayor de 5 caracteres</span>
+                <textarea class="textarea" 
+                          type="text"   
+                          formControlName="titulo"></textarea>
+
+                <br><br>
+
+                <p class="parrafo">* Nota</p>
+                <span class="text-danger" 
+                      *ngIf="validacion('msjNota')">Debe de ser mayor de 5 caracteres</span>
+                <textarea class="textareaNota" 
+                          type="text" 
+                          formControlName="msjNota"></textarea>
+
+                <button  type="submit" 
+                        class="btnRespuesta2 btnEstandar">Agregar Nota</button>
+
+            </form>
+
+        </div>
+    </div>
+</main>
+
